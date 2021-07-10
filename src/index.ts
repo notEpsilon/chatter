@@ -34,7 +34,7 @@ io.on('connection', socket => {
 const PORT = process.env.PORT || 7070;
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('../../client/chatter/build'));
+    app.use(express.static('./client/chatter/build'));
 }
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
