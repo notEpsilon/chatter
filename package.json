@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "rm -rf dist && tsc && node dist/index.js",
-    "build1": "cd ../client/chatter && npm install",
-    "build2": "cd ../client/chatter && npm run build",
+    "build1": "cd client/chatter && npm install",
+    "build2": "cd client/chatter && npm run build",
     "heroku-postbuild": "npm run build1 && npm run build2"
   },
   "author": "",
@@ -16,5 +16,8 @@
     "@types/socket.io": "^3.0.2",
     "express": "^4.17.1",
     "socket.io": "^4.1.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
   }
 }
