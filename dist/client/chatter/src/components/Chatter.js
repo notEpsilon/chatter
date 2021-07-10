@@ -27,7 +27,7 @@ const react_1 = __importStar(require("react"));
 const react_2 = require("@chakra-ui/react");
 const CMessage_1 = __importDefault(require("./CMessage"));
 const socket_io_client_1 = __importDefault(require("socket.io-client"));
-exports.socket = socket_io_client_1.default('http://localhost:7070');
+exports.socket = socket_io_client_1.default('https://chatter-light.herokuapp.com/');
 ;
 const Chatter = ({ name }) => {
     const [msg, setMsg] = react_1.useState("");

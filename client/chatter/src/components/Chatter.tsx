@@ -8,7 +8,7 @@ import {
 import CMessage from './CMessage';
 import io from 'socket.io-client';
 
-export const socket = io('http://localhost:7070');
+export const socket = io('https://chatter-light.herokuapp.com/');
 
 interface Props {
     name: string;
