@@ -11,7 +11,6 @@ const io = new socketIO.Server(server, { cors: { origin: "http://localhost:3000"
 
 type Person = { name: string, socketID: string };
 
-
 interface RMessage {
     msg: string;
     name: string;

@@ -10,8 +10,8 @@ const app = express_1.default();
 const server = http_1.createServer(app);
 const PORT = process.env.PORT || 7070;
 const io = new socket_io_1.default.Server(server, { cors: { origin: "http://localhost:3000" } });
-let users = [];
 ;
+let users = [];
 if (process.env.NODE_ENV === 'production') {
     app.use(express_1.default.static('./client/chatter/build'));
 }
