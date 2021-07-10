@@ -1,9 +1,11 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import { createServer } from 'http';
 import socketIO from 'socket.io';
 
 const app = express();
 const server = createServer(app);
+
+const PORT = process.env.PORT || 7070;
 
 const io = new socketIO.Server(server, { cors: { origin: "http://localhost:3000" } });
 
@@ -15,6 +17,12 @@ interface RMessage {
     msg: string;
     name: string;
 };
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('./client/chatter/build'));
+}
+
+app.get('/', (req: Request, res: Response) => {});
 
 io.on('connection', socket => {
     console.log('- new connection established');
@@ -30,11 +38,5 @@ io.on('connection', socket => {
         io.emit("user-disconnected-2", users);
     });
 });
-
-const PORT = process.env.PORT || 7070;
-
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('./client/chatter/build'));
-}
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
