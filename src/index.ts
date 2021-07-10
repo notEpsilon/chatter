@@ -11,12 +11,12 @@ const io = new socketIO.Server(server, { cors: { origin: "http://localhost:3000"
 
 type Person = { name: string, socketID: string };
 
-let users: Person[] = [];
-
 interface RMessage {
     msg: string;
     name: string;
 };
+
+let users: Person[] = [];
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('./client/chatter/build'));
