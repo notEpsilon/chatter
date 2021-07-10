@@ -22,7 +22,9 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('./client/chatter/build'));
 }
 
-app.get('/', (req: Request, res: Response) => {});
+app.get('/', (req: Request, res: Response) => {
+    res.send("<h1>Hello To App</h1>");
+});
 
 io.on('connection', socket => {
     console.log('- new connection established');
