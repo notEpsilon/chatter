@@ -9,7 +9,7 @@ const socket_io_1 = __importDefault(require("socket.io"));
 const app = express_1.default();
 const server = http_1.createServer(app);
 const PORT = process.env.PORT || 7070;
-const io = new socket_io_1.default.Server(server, { cors: { origin: "http://localhost:3000" } });
+const io = new socket_io_1.default.Server(server, { cors: { origin: "https://chatter-light.herokuapp.com/" } });
 ;
 let users = [];
 if (process.env.NODE_ENV === 'production') {

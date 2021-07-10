@@ -7,7 +7,7 @@ const server = createServer(app);
 
 const PORT = process.env.PORT || 7070;
 
-const io = new socketIO.Server(server, { cors: { origin: "http://localhost:3000" } });
+const io = new socketIO.Server(server, { cors: { origin: "https://chatter-light.herokuapp.com/" } });
 
 type Person = { name: string, socketID: string };
 
